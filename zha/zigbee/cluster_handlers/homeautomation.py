@@ -20,6 +20,8 @@ from zha.zigbee.cluster_handlers.const import (
     REPORT_CONFIG_OP,
 )
 
+REPORT_CONFIG_OFF = (30, 65535, 1)
+
 
 @registries.CLUSTER_HANDLER_REGISTRY.register(ApplianceEventAlerts.cluster_id)
 class ApplianceEventAlertsClusterHandler(ClusterHandler):
@@ -95,15 +97,15 @@ class ElectricalMeasurementClusterHandler(ClusterHandler):
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.active_power.name,
-            config=REPORT_CONFIG_OP,
+            config=(30, 900, 10),
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.active_power_ph_b.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.active_power_ph_c.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.total_active_power.name,
@@ -111,35 +113,35 @@ class ElectricalMeasurementClusterHandler(ClusterHandler):
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.apparent_power.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.rms_current.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.rms_current_ph_b.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.rms_current_ph_c.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.rms_voltage.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.rms_voltage_ph_b.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.rms_voltage_ph_c.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.ac_frequency.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
     )
     ZCL_POLLING_ATTRS = [
