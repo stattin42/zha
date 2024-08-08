@@ -20,6 +20,8 @@ from zha.zigbee.cluster_handlers.const import (
     REPORT_CONFIG_OP,
 )
 
+REPORT_CONFIG_OFF = (30, 65535, 1)
+
 
 @registries.CLUSTER_HANDLER_REGISTRY.register(ApplianceEventAlerts.cluster_id)
 class ApplianceEventAlertsClusterHandler(ClusterHandler):
@@ -63,39 +65,39 @@ class ElectricalMeasurementClusterHandler(ClusterHandler):
     REPORT_CONFIG = (
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.active_power.name,
-            config=REPORT_CONFIG_OP,
+            config=(30, 900, 10),
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.active_power_max.name,
-            config=REPORT_CONFIG_DEFAULT,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.apparent_power.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.rms_current.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.rms_current_max.name,
-            config=REPORT_CONFIG_DEFAULT,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.rms_voltage.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.rms_voltage_max.name,
-            config=REPORT_CONFIG_DEFAULT,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.ac_frequency.name,
-            config=REPORT_CONFIG_OP,
+            config=REPORT_CONFIG_OFF,
         ),
         AttrReportConfig(
             attr=ElectricalMeasurement.AttributeDefs.ac_frequency_max.name,
-            config=REPORT_CONFIG_DEFAULT,
+            config=REPORT_CONFIG_OFF,
         ),
     )
     ZCL_INIT_ATTRS = {
