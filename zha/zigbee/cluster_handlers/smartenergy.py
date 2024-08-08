@@ -78,10 +78,10 @@ class MeteringClusterHandler(ClusterHandler):
     """Metering cluster handler."""
 
     REPORT_CONFIG = (
-        AttrReportConfig(
-            attr=Metering.AttributeDefs.instantaneous_demand.name,
-            config=REPORT_CONFIG_OP,
-        ),
+#        AttrReportConfig(
+#            attr=Metering.AttributeDefs.instantaneous_demand.name,
+#            config=REPORT_CONFIG_OP,
+#        ),
         AttrReportConfig(
             attr=Metering.AttributeDefs.current_summ_delivered.name,
             config=REPORT_CONFIG_DEFAULT,
